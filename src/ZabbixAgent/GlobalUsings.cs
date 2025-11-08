@@ -1,0 +1,11 @@
+﻿global using System.Net;
+global using System.Net.Sockets;
+global using System.Numerics;
+global using System.Reflection;
+global using System.Security.Cryptography;
+global using System.Text;
+global using System.Text.Json;
+global using System.Text.Json.Serialization;
+global using ZabbixAgent;
+global using ZabbixAgent.Models;
+global using ZabbixAgent.Services;
