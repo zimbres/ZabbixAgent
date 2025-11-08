@@ -201,8 +201,12 @@ public class AgentService
             case "agent.version":
                 return _version;
 
-            case "agent.hostname":
+            case "system.hostname":
                 return Environment.GetEnvironmentVariable("COMPUTERNAME")
+                       ?? Environment.GetEnvironmentVariable("HOSTNAME");
+
+            case "agent.hostname":
+                return _configurations.Hostname ?? Environment.GetEnvironmentVariable("COMPUTERNAME")
                        ?? Environment.GetEnvironmentVariable("HOSTNAME");
         }
 
