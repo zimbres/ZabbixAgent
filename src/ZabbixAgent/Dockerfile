@@ -1,4 +1,4 @@
-FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:9.0 AS build
+FROM --platform=$BUILDPLATFORM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 COPY ["src/ZabbixAgent/ZabbixAgent.csproj", "src/ZabbixAgent/"]
 RUN dotnet restore "./src/ZabbixAgent/ZabbixAgent.csproj"
@@ -15,7 +15,7 @@ RUN if [ "$TARGETPLATFORM" = "linux/amd64" ]; then \
     fi \
     && dotnet publish "src/ZabbixAgent/ZabbixAgent.csproj" -c Release -o /app/publish -r $RID --self-contained false
 
-FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS final
+FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS final
 USER $APP_UID
 WORKDIR /app
 COPY --from=build /app/publish .

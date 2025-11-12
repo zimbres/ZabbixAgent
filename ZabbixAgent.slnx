@@ -1,0 +1,13 @@
+<Solution>
+  <Folder Name="/Aspire/">
+    <Project Path="src/ZabbixAgent.AppHost/ZabbixAgent.AppHost.csproj" />
+    <Project Path="src/ZabbixAgent.ServiceDefaults/ZabbixAgent.ServiceDefaults.csproj" />
+  </Folder>
+  <Folder Name="/Solution Items/">
+    <File Path=".github/workflows/dotnet.yml" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+    <File Path="SECURITY.md" />
+  </Folder>
+  <Project Path="src/ZabbixAgent/ZabbixAgent.csproj" />
+</Solution>
